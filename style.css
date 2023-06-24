@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #d7f3e2;
+    font-family: roboto;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #2121218a;
+    color: #f1f1f1;
+    position: fixed;
+}
+
+.logo{
+    font-size: 30px;
+    padding: 20;
+    margin-left: 5%;
+}
+.logo span{
+    color: yellow;
+    font-size: 35px ;
+}
+.navBlock{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-around;
+    padding: 20;
+    margin-right: 5%;
+
+}
+.navBlock a{
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 19;
+    margin-left: 5% ;
+    
+}
+
+.navBlock a::after{
+    position: relative;
+    bottom: -0.5px;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgb(242, 242, 9);
+}
+.navBlock a:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.hero{
+    height: 100wh;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: 1s;
+}
+.slogan{
+    
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ece1e1;
+    text-align: center;
+    margin-top: 10%;
+}
+.slogan h1{
+    font-size: 55px;
+}
+.slogan p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+    font-style: oblique;
+}
+
+.decouvrir{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #f1f1f1;
+    cursor: pointer;
+}
+.decouvrir p{
+    color: #f1f1f1;
+    font-size: 20px;
+    padding: 20px 50px;
+    background-color: #0f0e0e7b;
+}
+.decouvrir p:hover{
+    color: yellow;
+}
+.decouvrir:hover{
+    border: 1px solid yellow
+}
+
+@media (max-width: 800px){
+    .navBlock{
+        display: none;
+    }
+    
+    .logo{
+        margin: 0 auto;
+        
+    }
+    .slogan{
+        top: 40%;
+    }
+    .slogan h1{
+        font-size: 40px;
+    }
+    .decouvrir{
+        top: 90%;
+    }
+}
+
+/*********INTRO SECTION***********/
+
+.introductionSection{
+    height: 100vh ;
+}
+.introText h2{
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+.introText p{
+    margin:  5% 25%;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 19;
+    color: #4b4b4b;
+}
+
+.prestation{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.presta{
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presta img{
+    
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 13px 8px 5px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px 8px 5px 3px rgba(0,0,0,0.75);
+}
+.presta img:hover{
+    scale: 1.15;
+}
+.imgBox{
+    transform: translatey(-100px);
+    opacity: 0;
+    width: 80%;
+    overflow: hidden;
+    box-shadow: 6px 6px 5px 3px rgba(60,58,58,0.75);
+-webkit-box-shadow: 6px 6px 5px 3px rgba(60,58,58,0.75);
+}
+
+
+.presta h3{
+    opacity: 0;
+    padding: 10;
+    transform: translatex(100px);
+}
+.presta p{
+    opacity: 0;
+    text-align: center;
+    margin: 20 25;
+    transform: translatex(-100px);
+}
+
+.button{
+    opacity: 0;
+    border: 2px solid rgb(109, 109, 38);
+    font-size: 100%;
+    padding:  15px 20px;
+    margin: 20;
+    cursor: pointer;
+    transform: translatey(100px);
+}
+
+.introText p.active, .imgBox.active, .presta h3.active, .presta p.active, .button.active{
+    opacity: 1;
+    transform: translate(0);
+    transition: 0.5s ease-out;
+}
+
+@media (max-width: 1000px){
+    .presta{
+        max-width: 50%;
+    }
+    .button{
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 500px){
+    .presta{
+        max-width: 100%;
+    }
+    .button{
+        margin-bottom: 30px;
+    }
+}
